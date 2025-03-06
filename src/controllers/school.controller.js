@@ -36,7 +36,7 @@ const AddSchool = async (req, res) => {
 
   // Check for if school already exists
   try {
-    const schoolAlreadyExists = prisma.School.findFirst({
+    const schoolAlreadyExists = await prisma.School.findFirst({
       where: {
         name,
         longitude,
