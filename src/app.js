@@ -26,7 +26,7 @@ app.get("/", (req, res) => {
       `);
 });
 
-// Routes
+// Route Handler
 app.use(schoolRouter);
 
 export { app };
