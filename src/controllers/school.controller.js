@@ -34,7 +34,7 @@ const AddSchool = async (req, res) => {
     return res.status(400).json(new ApiResponse(400, {}, coordinatesError));
   }
 
-  // If School Already Exists
+  // Check for if school already exists
   try {
     const schoolAlreadyExists = prisma.School.findFirst({
       where: {
@@ -47,7 +47,7 @@ const AddSchool = async (req, res) => {
     if (schoolAlreadyExists) {
       return res
         .status(409)
-        .json(new ApiResponse(409, {}, "School already registered"));
+        .json(new ApiResponse(409, {}, "School is already registered"));
     }
   } catch (error) {
     console.error(
