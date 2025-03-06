@@ -20,7 +20,7 @@ const validAddress = (address) => {
   if (address.trim().length < 3 || address.trim().length > 200) {
     return "School address must be between 3 and 200 characters.";
   }
-  if (!/^[a-zA-Z0-9 .-]+$/.test(address)) {
+  if (!/^[a-zA-Z0-9, .-]+$/.test(address)) {
     return "School address can only contain letters, numbers, spaces, dots, and hyphens.";
   }
   return null; // No error
